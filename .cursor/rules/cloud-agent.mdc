@@ -1,0 +1,7 @@
+---
+description: ETEMAD cloud-agent guardrails
+globs: "**/*"
+alwaysApply: true
+---
+
+One Cloud task = one branch, specific task prompt and allowed target paths. Never change shared migrations, schemas, secrets or config outside ownership. PR with tested evidence; do not deploy to production.

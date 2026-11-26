@@ -1,0 +1,224 @@
+order,gate,task_id,phase,package,target,precondition,model,evidence_required,est_hours
+1,G0,S00-001,0,ALL,AGENTS.md,30 schema copied to source/contracts/schemas,C,file + independent review,1.5
+2,G0,S00-002,0,ALL,.cursor/rules/architecture.mdc,S00-001 merged,C,file + independent review,1.5
+3,G0,S00-003,0,ALL,.cursor/rules/contracts.mdc,S00-001 merged,C,file + independent review,1.5
+4,G0,S00-004,0,ALL,.cursor/rules/security.mdc,S00-001 merged,C,file + independent review,1.5
+5,G0,S00-005,0,ALL,.cursor/rules/frontend.mdc,S00-001 merged,C,file + independent review,1.5
+6,G0,S00-006,0,ALL,.cursor/rules/testing.mdc,S00-001 merged,C,file + independent review,1.5
+7,G0,S00-007,0,ALL,.cursor/rules/cloud-agent.mdc,-,C,file + independent review,1.5
+8,G0,S00-008,0,ALL,docs/decisions/ADR-001-architecture.md,S00-001 merged,C,file + independent review,1.5
+9,G0,S00-009,0,ALL,docs/decisions/ADR-002-ui-design-system.md,S00-001 merged,C,file + independent review,1.5
+10,G0,S00-010,0,ALL,docs/decisions/ADR-003-storage-ownership.md,S00-001 merged,C,file + independent review,1.5
+11,G0,S00-011,0,ALL,docs/decisions/ADR-004-publishing-gates.md,S00-001 merged,C,file + independent review,1.5
+12,G0,S00-012,0,ALL,docs/decisions/ADR-005-auth-roles.md,S00-001 merged,C,file + independent review,1.5
+13,G0,S00-013,0,ALL,docs/decisions/ADR-006-ai-provider-gateway.md,S00-001 merged,C,file + independent review,1.5
+14,G0,S00-014,0,ALL,docs/architecture/SYSTEM_MAP.md,S00-008 merged,C,file + independent review,1.5
+15,G0,S00-015,0,ALL,docs/architecture/CONTRACT_OWNERSHIP.md,-,C,file + independent review,1.5
+16,G0,S00-016,0,ALL,docs/architecture/DATABASE_REVIEW.md,-,C,file + independent review,1.5
+17,G0,S00-017,0,ALL,tools/validate_contracts.py,30 schema files present,C,contract-check CI green,1.0
+18,G0,S00-018,0,ALL,.github/workflows/contract-check.yml,S00-017 merged,C,contract-check CI green,1.0
+19,G0,S00-052,0,ALL,.gitignore,-,C,file + independent review,1.0
+20,G0,S00-053,0,ALL,.editorconfig,-,C,file + independent review,1.0
+21,G0,S00-054,0,ALL,.github/CODEOWNERS,-,C,file + independent review,1.0
+22,G0,S00-055,0,ALL,tools/check_boundaries.py,-,C,file + independent review,1.0
+23,G0,S00-019,0,ALL,backend/pyproject.toml,none (verify existing config),C,"existing diff reviewed, no scope drift",1.0
+24,G0,S00-020,0,ALL,frontend/package.json,none (verify existing config),U,"existing diff reviewed, no scope drift",1.0
+25,G0,S00-021,0,ALL,README.md,S00-014 merged,C,file + independent review,1.5
+26,G0,S00-022,0,ALL,docs/contract-audits/access_decision.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+27,G0,S00-023,0,ALL,docs/contract-audits/ai_models_config.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+28,G0,S00-024,0,ALL,docs/contract-audits/analysis_chat_response.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+29,G0,S00-025,0,ALL,docs/contract-audits/analysis_result.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+30,G0,S00-026,0,ALL,docs/contract-audits/archive_record.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+31,G0,S00-027,0,ALL,docs/contract-audits/article.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+32,G0,S00-028,0,ALL,docs/contract-audits/audio_manifest.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+33,G0,S00-029,0,ALL,docs/contract-audits/classified_news.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+34,G0,S00-030,0,ALL,docs/contract-audits/cluster_result.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+35,G0,S00-031,0,ALL,docs/contract-audits/country_source_pack.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+36,G0,S00-032,0,ALL,docs/contract-audits/destination_config.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+37,G0,S00-033,0,ALL,docs/contract-audits/destination_payload.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+38,G0,S00-034,0,ALL,docs/contract-audits/editorial_rules.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+39,G0,S00-035,0,ALL,docs/contract-audits/event_envelope.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+40,G0,S00-036,0,ALL,docs/contract-audits/image_manifest.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+41,G0,S00-037,0,ALL,docs/contract-audits/metrics_snapshot.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+42,G0,S00-038,0,ALL,docs/contract-audits/news_framework.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+43,G0,S00-039,0,ALL,docs/contract-audits/normalized_news.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+44,G0,S00-040,0,ALL,docs/contract-audits/output_controls.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+45,G0,S00-041,0,ALL,docs/contract-audits/private_report.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+46,G0,S00-042,0,ALL,docs/contract-audits/public_report.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+47,G0,S00-043,0,ALL,docs/contract-audits/publication_job.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+48,G0,S00-044,0,ALL,docs/contract-audits/publication_result.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+49,G0,S00-045,0,ALL,docs/contract-audits/raw_news.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+50,G0,S00-046,0,ALL,docs/contract-audits/schedule_config.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+51,G0,S00-047,0,ALL,docs/contract-audits/source_registry.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+52,G0,S00-048,0,ALL,docs/contract-audits/translation.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+53,G0,S00-049,0,ALL,docs/contract-audits/validation_decision.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+54,G0,S00-050,0,ALL,docs/contract-audits/video_manifest.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+55,G0,S00-051,0,ALL,docs/contract-audits/workflow_status.md,S00-003 + its schema present,C,file + owner/consumer fields reviewed,0.5
+56,G0,S00-056,0,ALL,frontend/tsconfig.json,S00-020 merged,U,typecheck/build log,1.0
+57,G0,S00-057,0,ALL,frontend/vite.config.ts,S00-020 merged,U,typecheck/build log,1.0
+58,G0,S00-058,0,ALL,frontend/index.html,S00-020 merged,U,typecheck/build log,1.0
+59,G0,S00-059,0,ALL,frontend/src/main.tsx,S00-020 merged,U,typecheck/build log,1.0
+60,G0,S00-060,0,ALL,frontend/components.json,S00-020 merged,U,typecheck/build log,1.0
+61,G0,S00-061,0,ALL,frontend/eslint.config.js,S00-020 merged,U,typecheck/build log,1.0
+62,G0,S00-062,0,ALL,frontend/playwright.config.ts,S00-020 merged,U,typecheck/build log,1.0
+63,G1,S01-016,1,B01,backend/core/db.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+64,G1,S01-018,1,B01,backend/migrations/central/001_baseline.py,S00 + S01-016,C,pytest log + diff limited to TARGET,4.0
+65,G1,S01-023,1,B01,backend/alembic.ini,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+66,G1,S01-024,1,B01,backend/migrations/env.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+67,G1,S01-009,1,B01,backend/core/secrets.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+68,G1,S01-006,1,B01,backend/core/auth.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+69,G1,S01-008,1,B01,backend/core/audit.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+70,G1,S01-007,1,B01,backend/core/permissions.py,S00 + S01-006 + S01-008,C,pytest log + diff limited to TARGET,4.0
+71,G1,S01-027,1,B01,backend/core/errors.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+72,G1,S01-001,1,B01,backend/app/main.py,S00 + S01-027,C,pytest log + diff limited to TARGET,4.0
+73,G1,S01-025,1,B01,backend/app/dependencies.py,S00 + S01-001 + S01-016,C,pytest log + diff limited to TARGET,4.0
+74,G1,S01-026,1,B01,backend/app/api_router.py,S00 + S01-025 + S01-027,C,pytest log + diff limited to TARGET,4.0
+75,G1,S01-003,1,B01,backend/core/settings_service.py,S00 + S01-016 + S01-026,C,pytest log + diff limited to TARGET,4.0
+76,G1,S01-004,1,B01,backend/core/output_switches.py,S00 + S01-003,C,pytest log + diff limited to TARGET,4.0
+77,G1,S01-005,1,B01,backend/core/sources_service.py,S00 + S01-016,C,pytest log + diff limited to TARGET,4.0
+78,G1,S01-010,1,B01,backend/core/archive.py,S00 + S01-016 + S01-017,C,pytest log + diff limited to TARGET,4.0
+79,G1,S01-011,1,B01,backend/core/events.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+80,G1,S01-012,1,B01,backend/core/jobs.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+81,G1,S01-013,1,B01,backend/core/outbox.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+82,G1,S01-014,1,B01,backend/core/orchestrator.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+83,G1,S01-015,1,B01,backend/core/ai_gateway.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+84,G1,S01-017,1,B01,backend/core/object_store.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+85,G1,S01-028,1,B01,backend/core/health.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+86,G1,S01-029,1,B01,backend/core/observability.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+87,G1,S01-030,1,B01,backend/tests/conftest.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+88,G1,S01-019,1,B01,backend/tests/test_contracts.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+89,G1,S01-020,1,B01,backend/tests/test_security.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+90,G1,S01-021,1,B01,backend/tests/test_orchestration.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+91,G1,S01-022,1,B01,backend/tests/test_ai_gateway.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+92,G1,S01-002,1,B01,backend/core/contracts.py,Gate-00 = PASS,C,pytest log + diff limited to TARGET,4.0
+93,G2,S02-001,2,B02,backend/modules/domestic/feed_client.py,Gate-01 = PASS + allowed domestic source list,G,tests log + diff limited to TARGET,3.0
+94,G2,S02-002,2,B02,backend/modules/domestic/collector.py,Gate-01 = PASS + allowed source list,G,tests log + diff limited to TARGET,3.0
+95,G2,S02-003,2,B02,backend/modules/domestic/scheduler.py,Gate-01 = PASS + allowed source list,G,tests log + diff limited to TARGET,3.0
+96,G2,S02-004,2,B02,backend/modules/domestic/repository.py,Gate-01 = PASS + allowed source list,C,tests log + diff limited to TARGET,3.0
+97,G2,S02-005,2,B02,backend/modules/domestic/api.py,Gate-01 = PASS + allowed source list,G,tests log + diff limited to TARGET,3.0
+98,G2,S02-006,2,B02,backend/migrations/domestic/001_ingest.py,Gate-01 = PASS + allowed source list,C,tests log + diff limited to TARGET,3.0
+99,G2,S02-007,2,B02,backend/tests/test_domestic.py,Gate-01 = PASS + allowed source list,C,tests log + diff limited to TARGET,3.0
+100,G2,S03-001,3,B04,backend/modules/processing/extractor.py,Gate-01 = PASS + allowed source list,G,tests log + diff limited to TARGET,3.0
+101,G2,S03-002,3,B04,backend/modules/processing/normalizer.py,Gate-01 = PASS + allowed source list,G,tests log + diff limited to TARGET,3.0
+102,G2,S03-003,3,B04,backend/modules/processing/deduplicator.py,Gate-01 = PASS + allowed source list,G,tests log + diff limited to TARGET,3.0
+103,G2,S03-004,3,B04,backend/modules/processing/classifier.py,Gate-01 = PASS + allowed source list,G,tests log + diff limited to TARGET,3.0
+104,G2,S03-005,3,B04,backend/modules/processing/router.py,Gate-01 = PASS + allowed source list,C,tests log + diff limited to TARGET,3.0
+105,G2,S03-006,3,B04,backend/modules/processing/repository.py,Gate-01 = PASS + allowed source list,C,tests log + diff limited to TARGET,3.0
+106,G2,S03-007,3,B04,backend/migrations/central/002_processing.py,Gate-01 = PASS + allowed source list,C,tests log + diff limited to TARGET,3.0
+107,G2,S03-008,3,B04,backend/tests/test_processing.py,Gate-01 = PASS + allowed source list,C,tests log + diff limited to TARGET,3.0
+108,G3,S02-008,2,B03,backend/modules/foreign/country_discovery.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+109,G3,S02-009,2,B03,backend/modules/foreign/feed_client.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+110,G3,S02-010,2,B03,backend/modules/foreign/collector.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+111,G3,S02-011,2,B03,backend/modules/foreign/bridge.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+112,G3,S02-012,2,B03,backend/modules/foreign/repository.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+113,G3,S02-013,2,B03,backend/modules/foreign/api.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+114,G3,S02-014,2,B03,backend/migrations/foreign/001_ingest.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+115,G3,S02-015,2,B03,backend/tests/test_foreign.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+116,G3,S02-016,2,B09,frontend/src/design-system/tokens.json,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+117,G3,S02-017,2,B09,frontend/src/design-system/theme.css,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+118,G3,S02-018,2,B09,frontend/src/styles/globals.css,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+119,G3,S02-019,2,B09,frontend/src/design-system/README.md,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+120,G3,S02-020,2,B09,frontend/src/assets/BRAND_ASSETS_REQUIRED.md,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+121,G3,S04-001,4,B05,backend/modules/editorial/glossary.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+122,G3,S04-002,4,B05,backend/modules/editorial/policy.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+123,G3,S04-003,4,B05,backend/modules/editorial/quality.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+124,G3,S04-004,4,B05,backend/modules/editorial/translator.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,4.0
+125,G3,S04-005,4,B05,backend/modules/editorial/editor.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,4.0
+126,G3,S04-006,4,B05,backend/modules/editorial/image_processor.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,4.0
+127,G3,S04-007,4,B05,backend/modules/editorial/repository.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+128,G3,S04-008,4,B05,backend/migrations/central/003_editorial.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+129,G3,S04-009,4,B05,backend/tests/test_editorial.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+130,G3,S05-001,5,B06,backend/modules/intelligence/analysis.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,4.0
+131,G3,S05-002,5,B06,backend/modules/intelligence/evidence.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+132,G3,S05-003,5,B06,backend/modules/intelligence/retrieval.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+133,G3,S05-004,5,B06,backend/modules/intelligence/chat.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,4.0
+134,G3,S05-005,5,B06,backend/modules/intelligence/metrics.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,4.0
+135,G3,S05-006,5,B06,backend/modules/intelligence/public_reports.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,4.0
+136,G3,S05-007,5,B06,backend/modules/intelligence/private_reports.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+137,G3,S05-008,5,B06,backend/modules/intelligence/repository.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+138,G3,S05-009,5,B06,backend/migrations/central/004_intelligence.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+139,G3,S05-010,5,B06,backend/tests/test_intelligence.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+140,G3,S06-001,6,B08,backend/modules/publishing/scheduler.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+141,G3,S06-002,6,B08,backend/modules/publishing/destinations.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+142,G3,S06-003,6,B08,backend/modules/publishing/formatter.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+143,G3,S06-004,6,B08,backend/modules/publishing/dispatcher.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+144,G3,S06-005,6,B08,backend/adapters/base.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+145,G3,S06-006,6,B08,backend/adapters/telegram.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+146,G3,S06-007,6,B08,backend/adapters/bale.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+147,G3,S06-008,6,B08,backend/adapters/eitaa.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+148,G3,S06-009,6,B08,backend/adapters/rubika.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+149,G3,S06-010,6,B08,backend/adapters/whatsapp.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+150,G3,S06-011,6,B08,backend/adapters/cms.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+151,G3,S06-012,6,B08,backend/adapters/registry.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+152,G3,S06-013,6,B08,backend/modules/publishing/repository.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+153,G3,S06-014,6,B08,backend/migrations/central/005_publishing.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+154,G3,S06-015,6,B08,backend/tests/test_publishing.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+155,G3,S07-001,7,B07,backend/modules/studio/tts.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,4.0
+156,G3,S07-002,7,B07,backend/modules/studio/subtitles.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,4.0
+157,G3,S07-003,7,B07,backend/modules/studio/renderer.py,Gate-02 = PASS,G,tests log + diff limited to TARGET,4.0
+158,G3,S07-004,7,B07,backend/modules/studio/repository.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+159,G3,S07-005,7,B07,backend/migrations/central/006_studio.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+160,G3,S07-006,7,B07,backend/tests/test_studio.py,Gate-02 = PASS,C,tests log + diff limited to TARGET,4.0
+161,G3,S08-001,8,B09,frontend/src/app/App.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+162,G3,S08-002,8,B09,frontend/src/app/router.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+163,G3,S08-003,8,B09,frontend/src/lib/api.ts,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+164,G3,S08-004,8,B09,frontend/src/lib/contracts.ts,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+165,G3,S08-005,8,B09,frontend/src/components/AppShell.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+166,G3,S08-006,8,B09,frontend/src/components/NewsTable.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+167,G3,S08-007,8,B09,frontend/src/components/StatusBadge.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+168,G3,S08-008,8,B09,frontend/src/components/SourceCitation.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+169,G3,S08-009,8,B09,frontend/src/features/newsroom/NewsDesk.tsx,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+170,G3,S08-010,8,B09,frontend/src/features/editor/ArticleEditor.tsx,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+171,G3,S08-011,8,B09,frontend/src/features/translation/TranslatorWorkspace.tsx,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+172,G3,S08-012,8,B09,frontend/src/features/analysis/PoliticalAnalysis.tsx,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+173,G3,S08-013,8,B09,frontend/src/features/executive/ExecutiveDashboard.tsx,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+174,G3,S08-014,8,B09,frontend/src/features/owner/OwnerDashboard.tsx,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+175,G3,S08-015,8,B09,frontend/src/features/staff/StaffDashboard.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+176,G3,S08-016,8,B09,frontend/src/features/sources/SourcesManager.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+177,G3,S08-017,8,B09,frontend/src/features/publishing/PublishingCenter.tsx,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+178,G3,S08-018,8,B09,frontend/src/features/studio/StudioWorkspace.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+179,G3,S08-019,8,B09,frontend/src/features/settings/Settings.tsx,Gate-02 = PASS,G,tests log + diff limited to TARGET,3.0
+180,G3,S08-020,8,B09,frontend/src/features/auth/Login.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+181,G3,S08-021,8,B09,frontend/src/i18n/fa.ts,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+182,G3,S08-022,8,B09,frontend/tests/access.spec.ts,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+183,G3,S08-023,8,B09,frontend/tests/newsroom.spec.ts,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+184,G3,S08-024,8,B09,frontend/tests/design-system.spec.ts,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+185,G3,S08-025,8,B09,frontend/src/lib/auth.ts,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+186,G3,S08-026,8,B09,frontend/src/lib/query.ts,Gate-02 = PASS,C,tests log + diff limited to TARGET,3.0
+187,G3,S08-027,8,B09,frontend/src/components/PrivateReportGuard.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+188,G3,S08-028,8,B09,frontend/src/components/ConfirmAction.tsx,Gate-02 = PASS,U,tests log + diff limited to TARGET,3.0
+189,G4,S09-001,9,ALL,deploy/core/compose.yaml,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+190,G4,S09-002,9,ALL,deploy/domestic/compose.yaml,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+191,G4,S09-003,9,ALL,deploy/foreign/compose.yaml,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+192,G4,S09-004,9,ALL,deploy/core/Dockerfile,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+193,G4,S09-005,9,ALL,deploy/domestic/Dockerfile,Gate-08/09 = PASS,G,E2E log + gate report,4.0
+194,G4,S09-006,9,ALL,deploy/foreign/Dockerfile,Gate-08/09 = PASS,G,E2E log + gate report,4.0
+195,G4,S09-007,9,ALL,deploy/frontend/Dockerfile,Gate-08/09 = PASS,U,E2E log + gate report,4.0
+196,G4,S09-008,9,ALL,deploy/env.example,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+197,G4,S09-009,9,ALL,backend/tests/test_contract_integration.py,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+198,G4,S09-010,9,ALL,backend/tests/test_private_isolation.py,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+199,G4,S09-011,9,ALL,backend/tests/test_output_switches.py,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+200,G4,S09-012,9,ALL,backend/tests/test_end_to_end.py,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+201,G4,S09-013,9,ALL,quality/load_test.py,Gate-08/09 = PASS,G,E2E log + gate report,4.0
+202,G4,S09-014,9,ALL,quality/security_review.md,Gate-08/09 = PASS,R,E2E log + gate report,4.0
+203,G4,S09-015,9,ALL,quality/legal_editorial_review.md,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+204,G4,S09-016,9,ALL,quality/interface_review.md,Gate-08/09 = PASS,R,E2E log + gate report,4.0
+205,G4,S09-017,9,ALL,quality/acceptance_matrix.md,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+206,G4,S09-018,9,ALL,docs/runbooks/backup_restore.md,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+207,G4,S09-019,9,ALL,docs/runbooks/operations.md,Gate-08/09 = PASS,G,E2E log + gate report,4.0
+208,G4,S09-020,9,ALL,docs/runbooks/rollback.md,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+209,G4,S09-021,9,ALL,docs/api/openapi-review.md,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+210,G4,S09-022,9,ALL,frontend/tests/e2e-critical.spec.ts,Gate-08/09 = PASS,U,E2E log + gate report,4.0
+211,G4,S09-023,9,ALL,.github/workflows/backend-ci.yml,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+212,G4,S09-024,9,ALL,.github/workflows/frontend-ci.yml,Gate-08/09 = PASS,U,E2E log + gate report,4.0
+213,G4,S09-025,9,ALL,.github/workflows/security-ci.yml,Gate-08/09 = PASS,C,E2E log + gate report,4.0
+214,G4,S09-026,9,ALL,frontend/tests/setup.ts,Gate-08/09 = PASS,U,tests log + diff limited to TARGET,4.0
+215,G4,S09-027,9,ALL,deploy/frontend/nginx.conf,Gate-08/09 = PASS,C,tests log + diff limited to TARGET,4.0
+216,G4,S09-028,9,ALL,deploy/README.md,Gate-08/09 = PASS,C,tests log + diff limited to TARGET,4.0
+217,G4,S09-029,9,ALL,docs/api/openapi.yaml,Gate-08/09 = PASS,C,tests log + diff limited to TARGET,4.0
+218,G4,S10-001,10,ALL,docs/release/RELEASE_CHECKLIST.md,Gate-08/09 = PASS,R,deploy log + gate-10 report,6.0
+219,G4,S10-002,10,ALL,docs/release/CHANGELOG.md,Gate-08/09 = PASS,G,deploy log + gate-10 report,6.0
+220,G4,S10-003,10,ALL,docs/release/HANDOFF_TO_TEAMS.md,Gate-08/09 = PASS,C,deploy log + gate-10 report,6.0
+221,G4,S10-004,10,ALL,docs/release/FINAL_ACCEPTANCE.md,Gate-08/09 = PASS,R,deploy log + gate-10 report,6.0
+222,G4,S10-005,10,ALL,docs/release/PROMPT_CHANGE_LOG.md,Gate-08/09 = PASS,C,deploy log + gate-10 report,6.0
+223,G4,S10-006,10,ALL,docs/release/AS_BUILT_ARCHITECTURE.md,Gate-08/09 = PASS,R,tests log + diff limited to TARGET,3.0

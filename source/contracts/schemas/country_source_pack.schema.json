@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/country_source_pack.schema.json",
+  "title": "country_source_pack",
+  "description": "بسته قابل بارگذاری منابع یک کشور؛ فقط RSSهای تأییدشده فعال می‌شوند.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "pack_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "country": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "site_url": {
+            "type": "string",
+            "pattern": "^https?://"
+          },
+          "feed_url": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "api_base_url": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "country": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "language": {
+            "type": "string",
+            "minLength": 1
+          },
+          "stream": {
+            "type": "string",
+            "enum": [
+              "domestic",
+              "foreign"
+            ]
+          },
+          "auth_ref": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "license_scope": {
+            "type": "string",
+            "enum": [
+              "metadata",
+              "summary",
+              "full_text",
+              "unknown"
+            ]
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "source_id",
+          "site_url",
+          "country",
+          "language",
+          "stream",
+          "license_scope",
+          "enabled"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "verified_feed_count": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "pack_id",
+    "country",
+    "generated_at",
+    "sources",
+    "verified_feed_count"
+  ],
+  "additionalProperties": false
+}

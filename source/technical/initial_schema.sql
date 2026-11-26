@@ -1,0 +1,2 @@
+-- For development reference: see postgres_*_schema_PROPOSAL.sql.
+-- These are typed schema proposals, not approved production migrations.
