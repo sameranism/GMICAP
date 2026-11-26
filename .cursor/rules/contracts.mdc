@@ -1,0 +1,7 @@
+---
+description: ETEMAD contracts guardrails
+globs: "contracts/**/*.json,source/contracts/**/*.json,backend/**/*.py,frontend/src/lib/contracts.ts"
+alwaysApply: false
+---
+
+Validate JSON Schema Draft 2020-12 v1.0; originals and examples frozen; breaking change via separate ADR, a new wire version and passing producer/consumer compatibility tests; schema changes separate PR.

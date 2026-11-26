@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "destination_id": "DST-TELEGRAM-INT",
+  "platform": "telegram",
+  "name": "کانال بین‌الملل نمونه",
+  "address": "@example_channel",
+  "credential_ref": "secrets/telegram/example",
+  "desks": [
+    "international"
+  ],
+  "allowed_streams": [
+    "foreign"
+  ],
+  "enabled": false,
+  "connection_state": "unverified",
+  "updated_at": "2026-11-19T12:00:00Z"
+}
