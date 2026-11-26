@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/normalized_news.schema.json",
+  "title": "normalized_news",
+  "description": "متن استاندارد، با حفظ متن اصلی و محدوده حقوق استفاده.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "news_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stream": {
+      "type": "string",
+      "enum": [
+        "domestic",
+        "foreign",
+        "manual"
+      ]
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "original_url": {
+      "type": "string",
+      "pattern": "^https?://"
+    },
+    "original_title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "original_text": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_country": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "subject_countries": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{2}$"
+      }
+    },
+    "published_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "collected_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "content_scope": {
+      "type": "string",
+      "enum": [
+        "metadata",
+        "summary",
+        "full_text"
+      ]
+    },
+    "reuse_permission": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "licensed",
+        "link_only",
+        "blocked"
+      ]
+    },
+    "source_payload_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "normalized_text": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "fingerprint": {
+      "type": "string",
+      "minLength": 1
+    },
+    "normalization_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "news_id",
+    "stream",
+    "source_id",
+    "original_url",
+    "original_title",
+    "original_text",
+    "language",
+    "subject_countries",
+    "collected_at",
+    "content_scope",
+    "reuse_permission",
+    "fingerprint",
+    "normalization_version"
+  ],
+  "additionalProperties": false
+}

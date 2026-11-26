@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/news_framework.schema.json",
+  "title": "news_framework",
+  "description": "قرارداد قابل بارگذاری چارچوب نوشتار خبر برای یک سرویس.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "framework_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "desk": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stream": {
+      "type": "string",
+      "enum": [
+        "domestic",
+        "foreign",
+        "mixed",
+        "manual"
+      ]
+    },
+    "headline_max_chars": {
+      "type": "integer",
+      "minimum": 10
+    },
+    "summary_max_chars": {
+      "type": "integer",
+      "minimum": 20
+    },
+    "required_sections": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "attribution_required": {
+      "type": "boolean"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "framework_id",
+    "desk",
+    "stream",
+    "headline_max_chars",
+    "summary_max_chars",
+    "required_sections",
+    "attribution_required",
+    "updated_at"
+  ],
+  "additionalProperties": false
+}
