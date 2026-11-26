@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/destination_config.schema.json",
+  "title": "destination_config",
+  "description": "پیکربندی مقصد بدون ذخیره رمز یا توکن به‌صورت آشکار.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "destination_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "website",
+        "telegram",
+        "bale",
+        "eitaa",
+        "rubika",
+        "other"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "address": {
+      "type": "string",
+      "minLength": 1
+    },
+    "credential_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "desks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "allowed_streams": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "domestic",
+          "foreign"
+        ]
+      }
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "connection_state": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "verified",
+        "disabled"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "destination_id",
+    "platform",
+    "name",
+    "address",
+    "credential_ref",
+    "desks",
+    "allowed_streams",
+    "enabled",
+    "connection_state",
+    "updated_at"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,7 @@
+---
+description: ETEMAD security guardrails
+globs: "backend/**/*.py,frontend/src/**/*.tsx,deploy/**/*.yaml"
+alwaysApply: true
+---
+
+Server-side authorization, EIC-private not public, no secrets in files/logs; default deny; feature flags rechecked immediately before side effects; audit. No real publishing unless explicitly authorized.
