@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/publication_job.schema.json",
+  "title": "publication_job",
+  "description": "دستور انتشار برای خبر یا گزارش عمومی؛ private_report در enum وجود ندارد.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "job_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "object_type": {
+      "type": "string",
+      "enum": [
+        "article",
+        "public_report"
+      ]
+    },
+    "object_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stream": {
+      "type": "string",
+      "enum": [
+        "domestic",
+        "foreign",
+        "mixed",
+        "manual"
+      ]
+    },
+    "destination_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "scheduled_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "policy_decision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "held",
+        "in_progress",
+        "completed",
+        "cancelled"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "job_id",
+    "object_type",
+    "object_id",
+    "stream",
+    "destination_ids",
+    "scheduled_at",
+    "expires_at",
+    "policy_decision_id",
+    "idempotency_key",
+    "state",
+    "created_at"
+  ],
+  "additionalProperties": false
+}
