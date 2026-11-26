@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "analysis_id": "AN-100",
+  "topic": "global_trade",
+  "time_range": {
+    "from": "2026-11-18T00:00:00Z",
+    "to": "2026-11-19T12:00:00Z"
+  },
+  "source_refs": [
+    "NEWS-10001"
+  ],
+  "claims": [
+    {
+      "text": "گزارشی درباره یک موضوع اقتصادی وجود دارد.",
+      "source_refs": [
+        "NEWS-10001"
+      ],
+      "classification": "attributed"
+    }
+  ],
+  "uncertainties": [
+    "سایر منابع هنوز بررسی نشده‌اند."
+  ],
+  "created_at": "2026-11-19T12:00:00Z"
+}

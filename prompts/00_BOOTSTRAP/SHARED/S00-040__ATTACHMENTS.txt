@@ -1,0 +1,4 @@
+source/specs/00_MASTER_ETEMAD_ARCHITECTURE.md
+source/technical/project_package_map.csv
+source/contracts/schemas/output_controls.schema.json
+source/contracts/examples/output_controls.example.json

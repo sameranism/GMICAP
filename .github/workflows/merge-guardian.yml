@@ -1,0 +1,99 @@
+name: merge-guardian
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths: ['.github/workflows/merge-guardian.yml']
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  independent-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify review selection and report new main commits
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import subprocess
+
+          def command(*args):
+              return subprocess.check_output(args, text=True)
+
+          def api(path):
+              pages = json.loads(command("gh", "api", "--paginate", "--slurp", path))
+              return [item for page in pages for item in page]
+
+          def reviewer_approved(pr, reviews):
+              latest_decisions = {}
+              for review in sorted(reviews, key=lambda item: item["id"]):
+                  login = review["user"]["login"]
+                  if login.casefold() == pr["user"]["login"].casefold():
+                      continue
+                  if review["state"] in {"APPROVED", "CHANGES_REQUESTED", "DISMISSED"}:
+                      latest_decisions[login.casefold()] = review
+              return any(
+                  review["state"] == "APPROVED"
+                  and review["commit_id"] == pr["head"]["sha"]
+                  and review["author_association"] in {"OWNER", "MEMBER", "COLLABORATOR"}
+                  for review in latest_decisions.values()
+              )
+
+          pr = {"user": {"login": "author"}, "head": {"sha": "head"}}
+          approval = {"id": 1, "user": {"login": "reviewer"}, "state": "APPROVED",
+                      "commit_id": "head", "author_association": "COLLABORATOR"}
+          assert reviewer_approved(pr, [approval])
+          assert not reviewer_approved(pr, [])
+          assert not reviewer_approved(pr, [approval | {"user": {"login": "AUTHOR"}}])
+          assert not reviewer_approved(pr, [approval | {"commit_id": "stale"}])
+          assert not reviewer_approved(pr, [approval | {"author_association": "NONE"}])
+          for state in ("CHANGES_REQUESTED", "DISMISSED"):
+              assert not reviewer_approved(pr, [approval, approval | {"id": 2, "state": state}])
+          assert reviewer_approved(pr, [approval, approval | {"id": 2, "state": "COMMENTED"}])
+          print("Review selection fixtures: 8 passed")
+
+          if os.environ["EVENT"] != "push":
+              raise SystemExit(0)
+
+          repo = os.environ["GH_REPO"]
+          before, after = os.environ["BEFORE"], os.environ["AFTER"]
+          subprocess.run(["git", "merge-base", "--is-ancestor", before, after], check=True)
+          commits = command("git", "rev-list", "--first-parent", f"{before}..{after}").split()
+          missing = []
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
+              print("| Main commit | Pull request | Independent approval |", file=summary)
+              print("| --- | --- | --- |", file=summary)
+              for sha in commits:
+                  candidates = api(f"repos/{repo}/commits/{sha}/pulls")
+                  merged = next((item for item in candidates if item["merged_at"]
+                                 and item["merge_commit_sha"] == sha
+                                 and item["base"]["ref"] == "main"
+                                 and item["base"]["repo"]["full_name"] == repo), None)
+                  number = merged["number"] if merged else None
+                  approved = bool(merged and reviewer_approved(
+                      merged, api(f"repos/{repo}/pulls/{number}/reviews")
+                  ))
+                  ref = f"#{number}" if number else "—"
+                  verdict = "Pass" if approved else "Missing"
+                  print(f"| `{sha[:12]}` | {ref} | {verdict} |", file=summary)
+                  if not approved:
+                      missing.append(sha)
+          if missing:
+              raise SystemExit(f"No independent approval on current PR head for {len(missing)} main commit(s)")
+          PY
