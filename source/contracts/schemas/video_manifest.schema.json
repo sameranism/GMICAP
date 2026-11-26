@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/video_manifest.schema.json",
+  "title": "video_manifest",
+  "description": "ویدئوی تولیدشده با مجری مصنوعی، دارای برچسب شفاف.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "video_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audio_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "video_uri": {
+      "type": "string",
+      "minLength": 1
+    },
+    "presenter_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "studio_template_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic_presenter": {
+      "type": "boolean",
+      "const": true
+    },
+    "disclosure_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "video_id",
+    "audio_id",
+    "video_uri",
+    "presenter_id",
+    "studio_template_id",
+    "synthetic_presenter",
+    "disclosure_label",
+    "created_at"
+  ],
+  "additionalProperties": false
+}
