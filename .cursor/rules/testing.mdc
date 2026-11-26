@@ -1,0 +1,17 @@
+---
+description: ETEMAD verification evidence, negative test and failure-path rules
+globs: "backend/tests/**/*.py,frontend/tests/**/*.ts,frontend/tests/**/*.tsx,quality/**/*,tools/**/*.py,.github/workflows/**/*"
+alwaysApply: false
+---
+
+# ETEMAD testing rules — S00-006
+
+- Read `AGENTS.md`, the current S00 task prompt/attachments, authoritative specifications and unchanged JSON Schema Draft 2020-12 v1.0 contracts before defining or claiming test coverage. Keep each change within the exact target path on its own task branch.
+- For every task report record: task ID, changed files, test environment, **actual executable command**, real exit status, relevant output or CI-run link, skipped checks, and explicit PASS / FAIL / BLOCKED / NOT_RUN outcome. A successful file-existence check does not prove a working product, valid contract, usable UI, or Gate acceptance.
+- Test the baseline valid contract examples and representative invalid payloads: missing required fields, illegal enum values, unknown additional fields, wrong types, malformed identifiers, invalid timestamps and unauthorized classifications. Do not modify frozen schemas or samples to hide failures; report discrepancies for the contract-audit task and ADR review.
+- Include idempotent replays, retries, timeouts, duplicate events, queue failures and partial destination failure paths, once implementing components exist. Ensure a failed publisher is not retried without checking policy, expiry and output controls.
+- Verify boundaries, backend authorization and forbidden access for owner/editor-in-chief/staff, including cross-tenant or cross-role retrieval. Test that `executive_private` content cannot reach public reports, Studio, public search, publishing queue, destination adapter or logs; do not assume the UI provides security.
+- Test each output switch `public_analysis`, `studio`, `publishing` at the side-effect boundary. Confirm switching output off does **not** stop ingestion, archiving or private EIC reporting; held jobs require policy, rights, time and revision revalidation.
+- Run tests in isolated fixtures and mock/dry-run providers by default. Never spend API credits, call real publishers, touch production data, or deploy merely to obtain test evidence. Preserve original inputs/provenance and redact secrets from test traces.
+- If a relevant test cannot run because runtime, dependency, credentials, staging or the subject code is absent, mark NOT_RUN with an exact blocker. Never fabricate green CI checks, independent reviewer conclusions or deployment evidence.
+- Gate-00 is not PASS until all S00 task outputs are verified and an independent reviewer examines diffs, contract/security findings and actual logs. Do not merge a draft PR or advance to dependent product code on self-attestation alone.

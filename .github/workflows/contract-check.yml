@@ -1,0 +1,60 @@
+name: Contract baseline verification
+
+on:
+  pull_request:
+  push:
+    branches:
+      - 'task/s00-*'
+      - 'main'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-contract-baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install minimal validator dependency
+        run: python -m pip install --disable-pip-version-check jsonschema==4.26.0
+      - name: Validate all baseline examples against their draft 2020-12 schemas
+        run: python tools/validate_contracts.py
+      - name: Check baseline inventory and required Markdown references
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv
+          import json
+          from pathlib import Path
+
+          root = Path(".")
+          manifest = json.loads((root / "manifests/manifest.json").read_text(encoding="utf-8"))
+          schemas = sorted((root / "source/contracts/schemas").glob("*.schema.json"))
+          examples = sorted((root / "source/contracts/examples").glob("*.example.json"))
+          specs = sorted((root / "source/specs").glob("*.md"))
+          required = [
+              "AGENTS.md",
+              "README_FA.md",
+              "source/specs/00_MASTER_ETEMAD_ARCHITECTURE.md",
+              "source/technical/project_package_map.csv",
+              "source/technical/dependency_edges.csv",
+              "source/technical/database_dictionary.csv",
+              "prompts/GATES/GATE-00-REVIEW.md",
+          ]
+          missing = [p for p in required if not (root / p).is_file()]
+          assert not missing, f"Missing referenced baseline files: {missing}"
+          assert len(schemas) == 30, f"Expected 30 schemas; found {len(schemas)}"
+          assert len(examples) == 30, f"Expected 30 examples; found {len(examples)}"
+          assert len(specs) == 10, f"Expected 10 specs; found {len(specs)}"
+          assert manifest["task_count"] == 223, "Task count mismatch"
+          with (root / "manifests/tasks.csv").open(encoding="utf-8-sig", newline="") as handle:
+              tasks = list(csv.DictReader(handle))
+          assert len(tasks) == 223, f"Expected 223 tasks; found {len(tasks)}"
+          print("PASS: required references, 10 specs, 30 schemas/examples, 223 tasks")
+          PY

@@ -1,0 +1,16 @@
+---
+description: ETEMAD safe task execution and branch isolation for local and cloud coding agents
+globs: "**/*"
+alwaysApply: true
+---
+
+# ETEMAD agent execution rules — S00-007
+
+- Before work, read `AGENTS.md`, `manifests/tasks.csv`, the exact task `PROMPT.md` or `SNN-XXX*.md`, its adjacent `__ATTACHMENTS.txt`, required sources and applicable `.cursor/rules`. Confirm the allowed `TARGET`, dependencies, entry gate, stop conditions and definition of done. Never treat a prompt-pack file as an implemented deliverable.
+- One task means one isolated branch using its declared `task/sNN-NNN-...` branch. Inspect the real repository and existing target before editing. Limit modified files to the **exact task target**; do not bundle speculative refactors, schema edits, unrelated dependency updates, migrations, environment changes or shared config. Open separate tasks/ADRs when necessary.
+- GitHub `main` is protected by process: do not commit directly, force-push, rewrite history or merge without a reviewed acceptance decision. Use a draft pull request while verification is incomplete. Do not mark Gate-00 PASS without independent review and evidence for all required Stage-0 tasks.
+- Respect the six-layer architecture, B01–B09/P01–P29 ownership and versioned JSON Schema v1.0. Cross-package access is by authorized API/event; domestic, foreign and central databases/queues remain separated. Never read or write another package's private schema as a shortcut.
+- Never expose secrets, private reports, personally identifying source records or live tokens in code, repository, model prompts, logs or screenshots. Backend RBAC, scoped accounts, `executive_private` report isolation and independent output switches are mandatory.
+- Use mocks and synthetic fixtures by default. No actual deployment (including VPS), real publishing, provider billing, third-party API side effects, CMS integration or production migration without specific authorization and applicable safety gates. Block integrations whose official APIs, credentials, brand rights or legal permissions remain unknown.
+- Do not mark a task PASS because a model said it finished. Run available checks, capture exact commands and exit statuses, distinguish CI from local tests, and state NOT_RUN or BLOCKED precisely. Hand off a minimal diff, test evidence, reviewer notes, unresolved risks and a straightforward rollback.
+- If model assignment C/G/U/R cannot be satisfied, record the model actually used and its limitations. Cloud Agent is an execution environment, not a model. Independent review must not be impersonated by the same writing run.

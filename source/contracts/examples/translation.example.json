@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "translation_id": "TR-10001",
+  "news_id": "NEWS-10001",
+  "source_language": "en",
+  "target_language": "fa",
+  "translated_text": "این یک متن نمونه ترجمه است.",
+  "source_text_ref": "NEWS-10001",
+  "glossary_version": "glossary-v1",
+  "model_id": "provider/model-example",
+  "warnings": [],
+  "created_at": "2026-11-19T12:00:00Z"
+}
