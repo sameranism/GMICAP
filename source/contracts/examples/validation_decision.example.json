@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "decision_id": "POL-10001",
+  "object_id": "ART-10001",
+  "object_type": "article",
+  "decision": "human_review",
+  "reason_codes": [
+    "SOURCE_RIGHTS_UNVERIFIED"
+  ],
+  "evidence_refs": [
+    "NEWS-10001"
+  ],
+  "policy_version": "policy-v1",
+  "decided_at": "2026-11-19T12:00:00Z",
+  "expires_at": null
+}

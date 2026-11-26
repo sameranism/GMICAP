@@ -1,0 +1,7 @@
+---
+description: ETEMAD testing guardrails
+globs: "backend/tests/**/*.py,frontend/tests/**/*.ts,quality/**/*"
+alwaysApply: false
+---
+
+Tests must cover positive, negative, repeated events and failure paths. Use mocks for external models and publishers. Record commands, exit status, current-head CI links, and skipped or missing checks accurately. Apply the evidence criteria in ADR-012. Preserve source and ACL.

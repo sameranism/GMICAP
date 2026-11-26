@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "audio_id": "AUD-01",
+  "source_object_type": "article",
+  "source_object_id": "ART-10001",
+  "audio_uri": "objects/audio/AUD-01.mp3",
+  "subtitle_uri": "objects/audio/AUD-01.srt",
+  "voice_id": "etm-female-01",
+  "language": "fa",
+  "ai_generated": true,
+  "created_at": "2026-11-19T12:00:00Z"
+}
