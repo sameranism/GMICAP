@@ -1,0 +1,14 @@
+# ADR-011 — Single-owner development with evidence-based acceptance
+
+Status: Owner-directed implementation proposal (2026-11-26); effective only after this PR is merged and native main protection is verified. PR #51 remains the original proposal. No Gate PASS or human approval is claimed.
+
+## Policy
+Routine, scoped fixture-only coding and maintenance require a task branch, preflight, PR, actual positive/negative test evidence, and successful required checks for the current head. No separate human approval or per-task owner confirmation is required. Human review, when not required, is recorded as NOT_REQUIRED, not PASS. Never push directly to main, force-push, or merge when the effective protection or required checks are missing.
+
+Sensitive changes retain explicit owner authorization and current-head independent review: security, permissions, contracts, private data, schema/migrations, publication, deployment and governance/CI. The guardian conservatively treats paths outside its small routine allowlist as sensitive; both old and new paths of a rename are checked. A sensitive semantic change in an otherwise routine file must still be escalated. Do not use a routine PR to weaken tests or controls. Formal Gate acceptance is separate and remains based on the existing review procedures and real evidence. Gate-00 remains open; isolated fixture work is not integration acceptance. Live external calls, credentials, publication, release and deployment require separate authorization.
+
+## Native ruleset migration (not executed by this PR)
+Keep old rulesets until replacement protection is active and verified. Target only refs/heads/main, enforcement Active, no bypass actors. Require PRs (zero general approvals; code-owner/last-push requirements off for routine), block deletion and non-fast-forward updates, retain signed commits and linear history (squash only, consistent with first-parent PR provenance), require up-to-date branches and actual GitHub Actions checks: backend, backend unit tests, contract layer (S00-017 / S00-018), verify-bootstrap, independent-review. Retain configured security scanning and quality controls; verify CodeQL availability and exact checks before switching. Do not require nonexistent teams, empty deployment environments or restrict creation/update in a way that blocks normal PRs. Never replace configured security controls with an empty check list. Validate settings and negative cases before removing old rulesets 28107297 and 28107358. No native administrative mutation is claimed.
+
+## Evidence and rollback
+Record actual CI URLs, exact SHA, test outcomes, and effective branch protection. Keep all formal Gate evidence and historical failed runs. If any check cannot execute, mark NOT_RUN/BLOCKED. Roll back via a new PR and restore previous rules only if replacement protection is verified; never leave main unprotected.

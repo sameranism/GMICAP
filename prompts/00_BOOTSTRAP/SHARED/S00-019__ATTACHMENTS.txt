@@ -1,0 +1,9 @@
+cursor-kit/AGENTS.md
+source/specs/00_MASTER_ETEMAD_ARCHITECTURE.md
+source/technical/project_package_map.csv
+source/technical/dependency_edges.csv
+source/technical/database_dictionary.csv
+source/contracts/schemas/event_envelope.schema.json
+source/contracts/examples/event_envelope.example.json
+source/contracts/schemas/workflow_status.schema.json
+source/contracts/examples/workflow_status.example.json

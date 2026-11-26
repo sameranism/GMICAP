@@ -1,0 +1,8 @@
+cursor-kit/AGENTS.md
+source/specs/00_MASTER_ETEMAD_ARCHITECTURE.md
+source/technical/project_package_map.csv
+source/technical/dependency_edges.csv
+source/technical/database_dictionary.csv
+source/specs/B04_PREPROCESSING_TECHNICAL_SPEC.md
+source/contracts/schemas/classified_news.schema.json
+source/contracts/examples/classified_news.example.json
