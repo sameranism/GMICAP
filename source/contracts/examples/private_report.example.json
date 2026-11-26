@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "report_id": "RPT-X-05",
+  "title": "گزارش ویژه نمونه",
+  "sections": [
+    {
+      "heading": "مرور",
+      "body": "نمونه محتوا؛ بدون داده واقعی.",
+      "source_refs": [
+        "NEWS-10001"
+      ]
+    }
+  ],
+  "source_refs": [
+    "NEWS-10001"
+  ],
+  "generated_at": "2026-11-19T12:00:00Z",
+  "time_range": {
+    "from": "2026-11-19T00:00:00Z",
+    "to": "2026-11-19T12:00:00Z"
+  },
+  "generation_status": "completed",
+  "created_by_project": "P19",
+  "visibility": "executive_private",
+  "report_type": "media_narratives",
+  "owner_role": "editor_in_chief",
+  "publishable": false
+}
