@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/translation.schema.json",
+  "title": "translation",
+  "description": "ترجمه مستقل، با امکان بازگشت به منبع و تشخیص موارد مبهم.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "translation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "news_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "translated_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_text_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "glossary_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "translation_id",
+    "news_id",
+    "source_language",
+    "target_language",
+    "translated_text",
+    "source_text_ref",
+    "glossary_version",
+    "model_id",
+    "warnings",
+    "created_at"
+  ],
+  "additionalProperties": false
+}
