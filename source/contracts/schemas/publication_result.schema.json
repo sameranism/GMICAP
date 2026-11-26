@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/publication_result.schema.json",
+  "title": "publication_result",
+  "description": "نتیجه جداگانه برای هر مقصد با وضعیت نامشخص به‌عنوان حالت مستقل.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "job_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "object_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "deliveries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "destination_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "success",
+              "failed",
+              "unknown",
+              "skipped"
+            ]
+          },
+          "external_message_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "attempted_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "destination_id",
+          "status",
+          "external_message_id",
+          "attempted_at",
+          "error_code"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "job_id",
+    "object_id",
+    "deliveries",
+    "completed_at"
+  ],
+  "additionalProperties": false
+}

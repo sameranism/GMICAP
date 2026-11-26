@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "configuration_id": "MODELS-01",
+  "tasks": [
+    {
+      "task": "translation",
+      "provider": "example",
+      "model": "translation-model",
+      "credential_ref": "secrets/ai/translation",
+      "max_daily_cost_usd": 10
+    }
+  ],
+  "updated_at": "2026-11-19T12:00:00Z"
+}

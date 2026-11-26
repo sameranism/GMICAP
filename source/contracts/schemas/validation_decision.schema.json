@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/validation_decision.schema.json",
+  "title": "validation_decision",
+  "description": "کنترل کیفیت، مجوز منابع، محتوای حساس و بازنشر؛ برای هر خبر و گزارش عمومی.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "decision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "object_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "object_type": {
+      "type": "string",
+      "enum": [
+        "article",
+        "public_report"
+      ]
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "auto_allowed",
+        "human_review",
+        "blocked"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "policy_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decided_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "decision_id",
+    "object_id",
+    "object_type",
+    "decision",
+    "reason_codes",
+    "evidence_refs",
+    "policy_version",
+    "decided_at",
+    "expires_at"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,7 @@
+---
+description: ETEMAD architecture guardrails
+globs: "**/*.py,**/*.ts,**/*.tsx,**/*.yaml,**/*.yml"
+alwaysApply: true
+---
+
+Architecture: 9 packages, 29 P IDs, 3 independent deployment environments, no package-internal imports or cross-package direct DB, use contracts and events; no speculative microservices.

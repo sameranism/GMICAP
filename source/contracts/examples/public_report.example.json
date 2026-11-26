@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "report_id": "RPT-P-01",
+  "title": "خلاصه بین‌المللی نمونه",
+  "sections": [
+    {
+      "heading": "مقدمه",
+      "body": "این یک گزارش آزمایشی است.",
+      "source_refs": [
+        "NEWS-10001"
+      ]
+    }
+  ],
+  "source_refs": [
+    "NEWS-10001"
+  ],
+  "generated_at": "2026-11-19T12:00:00Z",
+  "time_range": {
+    "from": "2026-11-19T00:00:00Z",
+    "to": "2026-11-19T12:00:00Z"
+  },
+  "generation_status": "ready_for_policy",
+  "created_by_project": "P18",
+  "visibility": "public",
+  "report_type": "foreign_digest"
+}
