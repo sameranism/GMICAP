@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "news_id": "NEWS-10001",
+  "stream": "foreign",
+  "desks": [
+    "international",
+    "economy"
+  ],
+  "topics": [
+    "global_trade"
+  ],
+  "subject_countries": [
+    "CN",
+    "US"
+  ],
+  "event_id": "EVENT-100",
+  "operational_priority": "normal",
+  "rules_version": "classification-v1",
+  "classified_at": "2026-11-19T12:00:00Z"
+}
