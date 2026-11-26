@@ -1,0 +1,199 @@
+{
+  "version": "1.1",
+  "date": "2026-11-21",
+  "packages": [
+    {
+      "id": "B01",
+      "name": "بنیان",
+      "english": "Etemad Core",
+      "projects": [
+        "P01",
+        "P02",
+        "P03",
+        "P26",
+        "P28",
+        "P29"
+      ],
+      "deployment": "مشترک / هسته مرکزی"
+    },
+    {
+      "id": "B02",
+      "name": "ایران‌بان",
+      "english": "Iran Monitor",
+      "projects": [
+        "P05"
+      ],
+      "deployment": "محیط داخلی مستقل"
+    },
+    {
+      "id": "B03",
+      "name": "جهان‌بان",
+      "english": "Global Monitor",
+      "projects": [
+        "P04",
+        "P06"
+      ],
+      "deployment": "محیط خارجی مستقل"
+    },
+    {
+      "id": "B04",
+      "name": "خبرپرداز",
+      "english": "News Processor",
+      "projects": [
+        "P07",
+        "P08",
+        "P09"
+      ],
+      "deployment": "پردازش مشترک هسته"
+    },
+    {
+      "id": "B05",
+      "name": "نگار",
+      "english": "Editorial AI",
+      "projects": [
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14"
+      ],
+      "deployment": "پردازش مشترک هسته"
+    },
+    {
+      "id": "B06",
+      "name": "ژرفان",
+      "english": "Intelligence & Reports",
+      "projects": [
+        "P15",
+        "P16",
+        "P17",
+        "P18",
+        "P19"
+      ],
+      "deployment": "تحلیل مشترک؛ حریم خصوصی جدا"
+    },
+    {
+      "id": "B07",
+      "name": "آوانما",
+      "english": "AI News Studio",
+      "projects": [
+        "P20",
+        "P21"
+      ],
+      "deployment": "سرویس خروجی مستقل"
+    },
+    {
+      "id": "B08",
+      "name": "رسان",
+      "english": "Publishing Engine",
+      "projects": [
+        "P22",
+        "P23",
+        "P24",
+        "P25"
+      ],
+      "deployment": "سرویس خروجی مستقل"
+    },
+    {
+      "id": "B09",
+      "name": "دیدبان",
+      "english": "Newsroom Dashboard",
+      "projects": [
+        "P27"
+      ],
+      "deployment": "رابط واحد وب"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D01",
+      "subject": "پایگاه داده",
+      "decision": "PostgreSQL مرکزی + PostgreSQL جداگانه برای سرور داخلی و خارجی؛ schemaهای مالکیت‌دار",
+      "status": "قطعی معماری پیشنهادی"
+    },
+    {
+      "id": "D02",
+      "subject": "صف و حافظه موقت",
+      "decision": "Redis Streams/worker برای صف؛ Redis منبع حقیقت نیست؛ transactional outbox در PostgreSQL",
+      "status": "پیشنهاد فنی"
+    },
+    {
+      "id": "D03",
+      "subject": "فایل‌های حجیم",
+      "decision": "S3-compatible object storage با prefixهای عمومی/خصوصی و presigned URLs کوتاه‌عمر",
+      "status": "پیشنهاد فنی"
+    },
+    {
+      "id": "D04",
+      "subject": "API و زبان",
+      "decision": "Python، FastAPI، SQLAlchemy 2، Pydantic 2، Alembic؛ نسخه‌ها در lockfile تثبیت شود",
+      "status": "پیشنهاد فنی"
+    },
+    {
+      "id": "D05",
+      "subject": "رابط",
+      "decision": "React + TypeScript، Mantine RTL، TanStack Query، نمودارهای ECharts و گراف React Flow",
+      "status": "پیشنهاد فنی"
+    },
+    {
+      "id": "D06",
+      "subject": "CMS نامشخص",
+      "decision": "اتصال‌دهنده CMSAdapter با interface ثابت؛ تا تعیین CMS فقط mock adapter",
+      "status": "باز ـ نیاز به تعیین CMS"
+    },
+    {
+      "id": "D07",
+      "subject": "کاربران",
+      "decision": "سقف ۱۰ حساب انسانی فعال شامل owner و editor_in_chief؛ ۸ حساب کارمند احتمالی",
+      "status": "تأیید کارفرما / اجرای فنی"
+    },
+    {
+      "id": "D08",
+      "subject": "رمزهای اولیه",
+      "decision": "۱ رمز تصادفی قوی برای هر حساب، فقط در کانال امن یک‌بار نمایش؛ ذخیره فقط hash؛ تغییر اجباری در ورود اول",
+      "status": "الزام امنیتی"
+    },
+    {
+      "id": "D09",
+      "subject": "قانون محتوا",
+      "decision": "ماتریس قواعد حقوقی با ارجاع و تاریخ؛ تأیید حقوقی رسانه قبل از فعال‌سازی انتشار",
+      "status": "نیازمند تأیید متخصص حقوقی"
+    },
+    {
+      "id": "D10",
+      "subject": "قالب و لوگو",
+      "decision": "لوگوی رسمی و فایل راهنمای هویت بصری باید از مالک برند دریافت شود؛ رنگ‌های فعلی نمونه و موقت",
+      "status": "باز ـ نیاز به فایل رسمی"
+    },
+    {
+      "id": "D11",
+      "subject": "زمان",
+      "decision": "ذخیره UTC، نمایش و تنظیم ساعت تهران Asia/Tehran؛ DST براساس timezone معتبر",
+      "status": "قطعی"
+    },
+    {
+      "id": "D12",
+      "subject": "گزارش‌های خصوصی",
+      "decision": "P19 در DB role و object bucket جدا؛ تنها مجوز editor_in_chief؛ هیچ تبدیل private->publication_job",
+      "status": "قطعی"
+    },
+    {
+      "id": "D13",
+      "subject": "خروجی‌های اختیاری",
+      "decision": "public_analysis، studio و publishing با کلیدهای scoped مستقل؛ output disabled یعنی عدم آغاز کار جدید/ارسال",
+      "status": "قطعی"
+    },
+    {
+      "id": "D14",
+      "subject": "قانون عدم تحریف",
+      "decision": "واژه‌نامه titleهای زمینه‌مند را فقط برای review پیشنهاد کند؛ متن منبع/نقل‌قول immutable",
+      "status": "قطعی"
+    },
+    {
+      "id": "D15",
+      "subject": "حجم",
+      "decision": "۵۰۰ تا ۵۰۰۰ خبر/روز؛ ابتدا هدف ۵۰۰۰ خبر با burst آزمون، ظرفیت AI براساس توکن و هزینه سنجیده شود",
+      "status": "مبنای ظرفیت"
+    }
+  ]
+}
