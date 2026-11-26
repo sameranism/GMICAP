@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "article_id": "ART-10001",
+  "news_id": "NEWS-10001",
+  "stream": "foreign",
+  "desk": "international",
+  "title": "تیتر نمونه خبری",
+  "lead": "لید نمونه با ارجاع به منبع.",
+  "body": "متن نمونه برای آزمون جریان انتشار.",
+  "short_summary": "خلاصه متن نمونه.",
+  "source_refs": [
+    "NEWS-10001"
+  ],
+  "framework_version": "framework-v1",
+  "editorial_rules_version": "rules-v1",
+  "status": "ready_for_policy",
+  "created_at": "2026-11-19T12:00:00Z"
+}

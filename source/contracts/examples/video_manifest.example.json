@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "video_id": "VID-01",
+  "audio_id": "AUD-01",
+  "video_uri": "objects/video/VID-01.mp4",
+  "presenter_id": "virtual-presenter-01",
+  "studio_template_id": "etemad-studio-v1",
+  "synthetic_presenter": true,
+  "disclosure_label": "تصویر و گوینده مجازی",
+  "created_at": "2026-11-19T12:00:00Z"
+}

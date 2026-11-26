@@ -1,0 +1,8 @@
+cursor-kit/AGENTS.md
+source/specs/00_MASTER_ETEMAD_ARCHITECTURE.md
+source/technical/project_package_map.csv
+source/technical/dependency_edges.csv
+source/technical/database_dictionary.csv
+source/specs/B03_FOREIGN_INGEST_TECHNICAL_SPEC.md
+source/contracts/schemas/country_source_pack.schema.json
+source/contracts/examples/country_source_pack.example.json

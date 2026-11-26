@@ -1,0 +1,91 @@
+{
+  "version": "1.1",
+  "documents": [
+    {
+      "name": "00_MASTER_ETEMAD_ARCHITECTURE.docx",
+      "bytes": 52953,
+      "headings": 23,
+      "tables": 16,
+      "paragraphs": 86,
+      "sha256": "117e7c0210ebea282691e24faf4cd256ec6502d971298db93094925b76628ee7"
+    },
+    {
+      "name": "B01_FOUNDATION_TECHNICAL_SPEC.docx",
+      "bytes": 45671,
+      "headings": 29,
+      "tables": 10,
+      "paragraphs": 138,
+      "sha256": "2d96c2ef58716ffd214300680f10e228b87b55de4e82d8302b81e9b5087f65de"
+    },
+    {
+      "name": "B02_DOMESTIC_INGEST_TECHNICAL_SPEC.docx",
+      "bytes": 42467,
+      "headings": 15,
+      "tables": 4,
+      "paragraphs": 65,
+      "sha256": "1cc2577245ece3dee59df0f7247e235f5d5e1f6c2644c591b13e00d47acf99a4"
+    },
+    {
+      "name": "B03_FOREIGN_INGEST_TECHNICAL_SPEC.docx",
+      "bytes": 42889,
+      "headings": 16,
+      "tables": 5,
+      "paragraphs": 72,
+      "sha256": "8076c289f0bf83650cee9c6fac08f6ab932305c8f2184348cf51352ba2d1cbe0"
+    },
+    {
+      "name": "B04_PREPROCESSING_TECHNICAL_SPEC.docx",
+      "bytes": 43344,
+      "headings": 18,
+      "tables": 6,
+      "paragraphs": 83,
+      "sha256": "bc845c34c4461f6d1050b9f50d2bf1ffdf2a3fa4eca817162790a059d59853d9"
+    },
+    {
+      "name": "B05_CONTENT_TECHNICAL_SPEC.docx",
+      "bytes": 44285,
+      "headings": 21,
+      "tables": 8,
+      "paragraphs": 102,
+      "sha256": "a27c9f359e4092b05109ad047e0df004dfb915b5ef92e4760dd020fb261a2699"
+    },
+    {
+      "name": "B06_INTELLIGENCE_TECHNICAL_SPEC.docx",
+      "bytes": 44470,
+      "headings": 22,
+      "tables": 8,
+      "paragraphs": 107,
+      "sha256": "fd55474bb695d8254563178bd5b069ab6a6bf73312ae867a632c285342c28649"
+    },
+    {
+      "name": "B07_STUDIO_TECHNICAL_SPEC.docx",
+      "bytes": 42613,
+      "headings": 15,
+      "tables": 5,
+      "paragraphs": 68,
+      "sha256": "16e9f0ee87cdafcd6848ab1edb739cedf74af4430ed37ec4c252b8542d2267ca"
+    },
+    {
+      "name": "B08_PUBLISHING_TECHNICAL_SPEC.docx",
+      "bytes": 43854,
+      "headings": 19,
+      "tables": 7,
+      "paragraphs": 92,
+      "sha256": "8f54dcd5f74a9375bdda7fe042722060959787c8152211c87b6fb70e908863e7"
+    },
+    {
+      "name": "B09_INTERFACE_TECHNICAL_SPEC.docx",
+      "bytes": 43025,
+      "headings": 17,
+      "tables": 4,
+      "paragraphs": 71,
+      "sha256": "76a7c82165730db6160c92e3471a7428817c0bed99f451b6ff74aa77379f57d4"
+    }
+  ],
+  "projects_count": 29,
+  "package_count": 9,
+  "table_count": 41,
+  "api_count": 34,
+  "user_seats": 10,
+  "existing_schema_count": 30
+}
