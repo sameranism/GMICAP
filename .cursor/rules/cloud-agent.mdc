@@ -1,0 +1,7 @@
+---
+description: ETEMAD cloud-agent guardrails
+globs: "**/*"
+alwaysApply: true
+---
+
+One Cloud task = one branch, specific task prompt and allowed target paths. Never change shared migrations, schemas, secrets or config outside ownership. Use ADR-012 for preflight, exact-head CI and automated Gate acceptance. Preserve the boundary on live external actions and production deployment.

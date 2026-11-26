@@ -1,0 +1,12 @@
+---
+description: ETEMAD architecture guardrails
+globs: "**/*.py,**/*.ts,**/*.tsx,**/*.yaml,**/*.yml"
+alwaysApply: true
+---
+
+Architecture: modular monolith where applicable; preserve 9 packages, 29 P IDs, and 3 independent deployment environments. Do not introduce speculative microservices.
+
+- Respect ownership in `source/technical/project_package_map.csv`, `source/technical/dependency_edges.csv` and `source/technical/database_dictionary.csv`. Internal imports within a package are allowed; imports of another package's private internals and shared ORM models are not.
+- Cross-package communication must use explicit authorized versioned APIs or validated `event_envelope` references. Preserve correlation and idempotency keys, classification and payload access controls; do not embed restricted payloads in shared messages. Workflow coordination remains owned by P29.
+- Keep central, domestic and foreign PostgreSQL and queue environments separate. A package may write only its owned schema; no direct cross-package database reads or writes. Foreign-to-central traffic must use the authenticated bridge, never a direct DB connection. PostgreSQL is authoritative; Redis is transient queue/cache; large objects belong in scoped object storage.
+- Keep frozen v1.0 contracts, provenance and original records intact. Apply repository-root `AGENTS.md`, ADR-012 and ADR-017 for scoped changes, preflight, evidence, and integration gates. Isolated implementation is not acceptance or deployment authorization.
