@@ -1,0 +1,17 @@
+---
+description: ETEMAD Persian RTL frontend design-system and accessibility guardrails
+globs: "frontend/**/*.tsx,frontend/**/*.ts,frontend/**/*.css,frontend/**/*.json"
+alwaysApply: false
+---
+
+# ETEMAD frontend rules — S00-005
+
+- Follow `AGENTS.md`, `source/specs/00_MASTER_ETEMAD_ARCHITECTURE.md`, `source/specs/B09_INTERFACE_TECHNICAL_SPEC.md`, `guides/CLIENT_DECISIONS.md`, task-specific references and baseline permission contracts. Do not assume old proposals have become executable code.
+- The later approved interface direction is **React + TypeScript + shadcn/ui + Tailwind CSS v4** with a project-owned Etemad Editorial Design System. B09's earlier **Mantine** references are superseded **for the interface choice only**; record and cross-reference the formal decision in `docs/decisions/ADR-002-ui-design-system.md` (S00-009). Do not silently edit the historical source specification.
+- Maintain independently owned, portable design tokens in DTCG-compatible form for color, typography, spacing, radii and state, mapping them to the chosen UI primitives. Treat brand red/ink/paper palettes as **provisional** until the official Etemad logo, palette and usage rights are supplied. Never present provisional styling as official branding.
+- Use Persian-first right-to-left layout consistently across navigation, tables, filters, data visualizations, dialogs, pagination, forms and editor controls. Isolate inherently LTR fragments such as URLs, code, IDs and email addresses. Use proper locale-aware dates and digits where requested, retaining machine-readable UTC timestamps in APIs.
+- Prefer accessible components with keyboard operation, visible focus states, appropriately named controls, responsive layouts, sufficient text contrast and reduced-motion support. Use React Aria when a needed accessible behavior is not provided by the existing primitives. Use Vazirmatn subject to verified font rights and availability; Lucide for icons; Tiptap/TanStack where tasks explicitly need editor/data capabilities. Do not add dependencies before the owning task.
+- Build reusable, task-scoped UI modules; separate feature data and business rules from visual components. No direct database access, privileged action or security decision in the browser. Backend P28 performs permission checks and resource filtering for owner, editor-in-chief and staff; UI hiding alone does not enforce access.
+- Never show any `executive_private` report in unauthorized search, dashboards, exports, caches, Studio or publishing UI. Do not leak private content through client-side state, browser logs, error messages or analytics. Treat backend output-switch states as authoritative for public analysis, studio and publishing controls.
+- Use fixture data and disabled/mock actions until valid server APIs and explicit authorization exist. No production publishing or external model calls from the client. Design for loading, empty, error, forbidden and offline states; do not invent operational statuses.
+- Validate UI changes with actual typecheck, lint, component/accessibility and user-flow tests once the corresponding scaffold exists. Record executed commands, exit codes, and NOT_RUN checks separately. Stay within the current task's allowed file; propose separate work for shared design-system changes.

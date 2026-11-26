@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "response_id": "CHAT-01",
+  "question_id": "Q-01",
+  "answer": "در داده نمونه فقط یک منبع ثبت شده است.",
+  "citations": [
+    {
+      "source_ref": "NEWS-10001",
+      "quote_span": null
+    }
+  ],
+  "uncertainty_notes": [
+    "منابع تکمیلی بررسی نشده‌اند."
+  ],
+  "classification": "internal",
+  "created_at": "2026-11-19T12:00:00Z"
+}
