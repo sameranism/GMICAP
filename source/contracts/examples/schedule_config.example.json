@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "config_id": "SCH-FOREIGN",
+  "stream": "foreign",
+  "desk": "international",
+  "timezone": "Asia/Tehran",
+  "mode": "fixed_times",
+  "fixed_times_local": [
+    "08:00",
+    "12:30",
+    "18:00"
+  ],
+  "interval_minutes": null,
+  "enabled": true,
+  "updated_at": "2026-11-19T12:00:00Z"
+}
