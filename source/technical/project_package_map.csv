@@ -1,0 +1,30 @@
+﻿project_id,project_name,package_id,package_name,inputs,outputs,consumers
+P01,استاندارد داده,B01,بنیان,نیاز سایر بخش‌ها,schemas/*.schema.json,همه بخش‌ها
+P02,تنظیمات مدیریتی,B01,بنیان,درخواست مدیر/قواعد,output_controls و تنظیمات نسخه‌دار,همه با مجوز
+P03,مدیریت منابع,B01,بنیان,URL/RSS/API/کشور,source_registry,۵ و ۶
+P04,کشف رسانه کشورها,B03,جهان‌بان,نام کشور/قید زبان,country_source_pack,۳
+P05,دریافت داخلی,B02,ایران‌بان,فهرست منابع داخلی,raw_news:domestic,۷
+P06,دریافت خارجی,B03,جهان‌بان,فهرست منابع خارجی,raw_news:foreign,۷
+P07,استانداردسازی,B04,خبرپرداز,raw_news,normalized_news,۸ و ۲۶
+P08,تشخیص تکرار,B04,خبرپرداز,normalized_news/آرشیو,cluster_result,۹
+P09,دسته‌بندی سرویس‌ها,B04,خبرپرداز,خبر و خوشه,classified_news,۱۲ و ۱۳ و ۱۵
+P10,چارچوب/واژه‌نامه,B05,نگار,قواعد و سبک,editorial_rules نسخه‌دار,۱۲ و ۱۳
+P11,کنترل محتوا و انتشار,B05,نگار,article/public_report/حقوق,validation_decision,۲۲
+P12,مترجم هوشمند,B05,نگار,خبر خارجی/واژه‌نامه,translation,۱۳ و ۲۶
+P13,ویراستار,B05,نگار,خبر/ترجمه/چارچوب,article,۱۴ و ۱۱
+P14,آماده‌سازی تصویر,B05,نگار,تصویر/لوگو/قالب,image_manifest,۱۱ و ۲۴
+P15,تحلیل سیاسی,B06,ژرفان,خبر/آرشیو/بازه,analysis_result,۱۶ و ۱۸ و ۱۹
+P16,چت‌بات تحلیل,B06,ژرفان,سؤال/اسناد مجاز,analysis_chat_response,رابط تحلیل
+P17,شاخص‌ها,B06,ژرفان,آرشیو/انتشار/بازه,metrics_snapshot,۱۸ و ۱۹ و ۲۷
+P18,چهار گزارش عمومی,B06,ژرفان,آرشیو/شاخص/زمان,public_report,۱۱ سپس ۲۲
+P19,سه گزارش اختصاصی,B06,ژرفان,تحلیل/آرشیو/مجوز,private_report,فقط ۲۷ و ۱۶ با مجوز
+P20,گوینده هوشمند,B07,آوانما,article/public_report,audio_manifest,۲۱ یا ۲۴
+P21,مجری مجازی استودیو,B07,آوانما,صوت/زیرنویس/قالب,video_manifest,۲۴
+P22,زمان‌بندی,B08,رسان,validation_decision/زمان,publication_job,۲۴ و ۲۵
+P23,مقاصد انتشار,B08,رسان,پلتفرم/credential_ref,destination_config,۲۴ و ۲۵
+P24,قالب‌بندی مقصد,B08,رسان,خبر/تصویر/مقصد,destination_payloads,۲۵
+P25,ارسال چندکاناله,B08,رسان,publication_job/payload,publication_result,۲۶ و ۱۷
+P26,آرشیو,B01,بنیان,خبر/گزارش/نتیجه,API و شناسه شیء,۸ و ۱۵ و ۱۷ و ۲۷
+P27,داشبوردها,B09,دیدبان,شاخص/وضعیت/مجوز,رابط واحد,کاربر نهایی
+P28,کنترل دسترسی,B01,بنیان,هویت/نقش/منبع,access_decision,همه پروژه‌ها
+P29,هماهنگ‌کننده,B01,بنیان,رویداد/وضعیت,event_envelope/Workflow,همه پروژه‌ها
