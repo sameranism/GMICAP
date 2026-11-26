@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "CN-2026-11-19",
+  "country": "CN",
+  "generated_at": "2026-11-19T12:00:00Z",
+  "sources": [
+    {
+      "source_id": "SRC-CN-01",
+      "site_url": "https://example.com",
+      "feed_url": "https://example.com/rss",
+      "api_base_url": null,
+      "country": "CN",
+      "language": "en",
+      "stream": "foreign",
+      "auth_ref": null,
+      "license_scope": "summary",
+      "enabled": false
+    }
+  ],
+  "verified_feed_count": 0
+}

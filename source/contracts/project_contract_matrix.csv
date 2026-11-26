@@ -1,0 +1,30 @@
+﻿project_id,project_name,inputs,outputs,consumer,delivery_phase
+P01,استاندارد داده,نیاز سایر بخش‌ها,schemas/*.schema.json,همه بخش‌ها,پایه
+P02,تنظیمات مدیریتی,درخواست مدیر/قواعد,output_controls و تنظیمات نسخه‌دار,همه با مجوز,پایه
+P03,مدیریت منابع,URL/RSS/API/کشور,source_registry,۵ و ۶,پایه
+P04,کشف رسانه کشورها,نام کشور/قید زبان,country_source_pack,۳,فاز ۱
+P05,دریافت داخلی,فهرست منابع داخلی,raw_news:domestic,۷,فاز ۱
+P06,دریافت خارجی,فهرست منابع خارجی,raw_news:foreign,۷,فاز ۱
+P07,استانداردسازی,raw_news,normalized_news,۸ و ۲۶,فاز ۱
+P08,تشخیص تکرار,normalized_news/آرشیو,cluster_result,۹,فاز ۱
+P09,دسته‌بندی سرویس‌ها,خبر و خوشه,classified_news,۱۲ و ۱۳ و ۱۵,فاز ۲
+P10,چارچوب/واژه‌نامه,قواعد و سبک,editorial_rules نسخه‌دار,۱۲ و ۱۳,فاز ۲
+P11,کنترل محتوا و انتشار,article/public_report/حقوق,validation_decision,۲۲,فاز ۲
+P12,مترجم هوشمند,خبر خارجی/واژه‌نامه,translation,۱۳ و ۲۶,فاز ۲
+P13,ویراستار,خبر/ترجمه/چارچوب,article,۱۴ و ۱۱,فاز ۲
+P14,آماده‌سازی تصویر,تصویر/لوگو/قالب,image_manifest,۱۱ و ۲۴,فاز ۲
+P15,تحلیل سیاسی,خبر/آرشیو/بازه,analysis_result,۱۶ و ۱۸ و ۱۹,فاز ۴
+P16,چت‌بات تحلیل,سؤال/اسناد مجاز,analysis_chat_response,رابط تحلیل,فاز ۴
+P17,شاخص‌ها,آرشیو/انتشار/بازه,metrics_snapshot,۱۸ و ۱۹ و ۲۷,فاز ۴
+P18,چهار گزارش عمومی,آرشیو/شاخص/زمان,public_report,۱۱ سپس ۲۲,فاز ۴
+P19,سه گزارش اختصاصی,تحلیل/آرشیو/مجوز,private_report,فقط ۲۷ و ۱۶ با مجوز,فاز ۴
+P20,گوینده هوشمند,article/public_report,audio_manifest,۲۱ یا ۲۴,فاز ۵
+P21,مجری مجازی استودیو,صوت/زیرنویس/قالب,video_manifest,۲۴,فاز ۵
+P22,زمان‌بندی,validation_decision/زمان,publication_job,۲۴ و ۲۵,فاز ۳
+P23,مقاصد انتشار,پلتفرم/credential_ref,destination_config,۲۴ و ۲۵,فاز ۳
+P24,قالب‌بندی مقصد,خبر/تصویر/مقصد,destination_payloads,۲۵,فاز ۳
+P25,ارسال چندکاناله,publication_job/payload,publication_result,۲۶ و ۱۷,فاز ۳
+P26,آرشیو,خبر/گزارش/نتیجه,API و شناسه شیء,۸ و ۱۵ و ۱۷ و ۲۷,پایه
+P27,داشبوردها,شاخص/وضعیت/مجوز,رابط واحد,کاربر نهایی,فاز ۵
+P28,کنترل دسترسی,هویت/نقش/منبع,access_decision,همه پروژه‌ها,پایه
+P29,هماهنگ‌کننده,رویداد/وضعیت,event_envelope/Workflow,همه پروژه‌ها,پایه
