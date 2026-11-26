@@ -1,0 +1,4 @@
+source/specs/00_MASTER_ETEMAD_ARCHITECTURE.md
+source/technical/project_package_map.csv
+source/contracts/schemas/news_framework.schema.json
+source/contracts/examples/news_framework.example.json
