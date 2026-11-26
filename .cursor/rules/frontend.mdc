@@ -1,0 +1,7 @@
+---
+description: ETEMAD frontend guardrails
+globs: "frontend/**/*.tsx,frontend/**/*.ts,frontend/**/*.css,frontend/**/*.json"
+alwaysApply: false
+---
+
+Etemad design: React TS, shadcn/ui, Tailwind CSS v4, optional React Aria, Vazirmatn, Lucide, Tiptap, TanStack. RTL from components to charts; warm paper + ink + provisional brand red; no Mantine. Await official logo/colors. Accessible keyboard/focus/contrast and reduced motion.

@@ -1,0 +1,25 @@
+# ETEMAD change ownership (S00-054)
+#
+# Placeholders only: real GitHub team identifiers were not supplied yet.
+# Replace the @org/team tokens with verified identifiers; do not invent users.
+# Until this file names valid owners, reviews are assigned manually.
+
+*                               @samram-shipt-it/core-reviewers
+
+/AGENTS.md                      @samram-shipt-it/core-reviewers
+/.cursor/rules/                 @samram-shipt-it/core-reviewers
+/.github/                       @samram-shipt-it/core-reviewers
+
+/source/contracts/              @samram-shipt-it/contract-reviewers
+/tools/                         @samram-shipt-it/contract-reviewers
+
+/docs/decisions/                @samram-shipt-it/architecture-reviewers
+/docs/contract-audits/          @samram-shipt-it/contract-reviewers
+
+/backend/core/                  @samram-shipt-it/core-reviewers
+/backend/app/                   @samram-shipt-it/core-reviewers
+/backend/migrations/            @samram-shipt-it/core-reviewers
+/backend/modules/domestic/      @samram-shipt-it/ingest-reviewers
+/backend/modules/foreign/       @samram-shipt-it/ingest-reviewers
+
+/frontend/                      @samram-shipt-it/frontend-reviewers
