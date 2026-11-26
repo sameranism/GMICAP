@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "payload_id": "PL-01",
+  "job_id": "JOB-10001",
+  "destination_id": "DST-TELEGRAM-INT",
+  "content_type": "text",
+  "text": "متن آزمایشی",
+  "asset_uris": [],
+  "source_refs": [
+    "NEWS-10001"
+  ],
+  "prepared_at": "2026-11-19T12:00:00Z"
+}
