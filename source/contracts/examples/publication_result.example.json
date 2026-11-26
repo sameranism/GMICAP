@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "job_id": "JOB-10001",
+  "object_id": "ART-10001",
+  "deliveries": [
+    {
+      "destination_id": "DST-TELEGRAM-INT",
+      "status": "skipped",
+      "external_message_id": null,
+      "attempted_at": "2026-11-19T12:00:00Z",
+      "error_code": "OUTPUT_DISABLED"
+    }
+  ],
+  "completed_at": "2026-11-19T12:00:00Z"
+}
