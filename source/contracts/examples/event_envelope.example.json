@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "event_id": "EVT-01",
+  "event_type": "news.normalized",
+  "producer_project": "P07",
+  "object_id": "NEWS-10001",
+  "correlation_id": "CORR-10001",
+  "idempotency_key": "P07:NEWS-10001:v1",
+  "classification": "internal",
+  "occurred_at": "2026-11-19T12:00:00Z",
+  "payload_ref": "objects/normalized/NEWS-10001.json"
+}
