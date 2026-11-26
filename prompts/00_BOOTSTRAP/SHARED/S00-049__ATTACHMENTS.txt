@@ -1,0 +1,4 @@
+source/specs/00_MASTER_ETEMAD_ARCHITECTURE.md
+source/technical/project_package_map.csv
+source/contracts/schemas/validation_decision.schema.json
+source/contracts/examples/validation_decision.example.json
