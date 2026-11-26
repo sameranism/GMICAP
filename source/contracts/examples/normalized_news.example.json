@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "news_id": "NEWS-10001",
+  "stream": "foreign",
+  "source_id": "SRC-CN-01",
+  "original_url": "https://example.com/news/10001",
+  "original_title": "Example report",
+  "original_text": "Example source summary only.",
+  "normalized_text": "Example source summary only.",
+  "language": "en",
+  "source_country": "CN",
+  "subject_countries": [
+    "CN",
+    "US"
+  ],
+  "published_at": "2026-11-19T11:55:00Z",
+  "collected_at": "2026-11-19T12:00:00Z",
+  "content_scope": "summary",
+  "reuse_permission": "unverified",
+  "source_payload_ref": "objects/foreign/NEWS-10001.html",
+  "fingerprint": "sha256:example",
+  "normalization_version": "v1"
+}
