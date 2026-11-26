@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "archive_id": "ARCH-01",
+  "object_type": "raw_news",
+  "object_id": "NEWS-10001",
+  "stream": "foreign",
+  "classification": "internal",
+  "payload_ref": "objects/raw/NEWS-10001.json",
+  "source_refs": [
+    "SRC-CN-01"
+  ],
+  "retention_policy_id": "RET-01",
+  "stored_at": "2026-11-19T12:00:00Z"
+}
