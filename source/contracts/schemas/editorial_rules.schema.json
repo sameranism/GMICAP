@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/editorial_rules.schema.json",
+  "title": "editorial_rules",
+  "description": "قواعد تحریریه، جایگزینی زمینه‌مند و منع تغییر نقل‌قول مستقیم.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "ruleset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "stream": {
+      "type": "string",
+      "enum": [
+        "domestic",
+        "foreign",
+        "mixed",
+        "manual"
+      ]
+    },
+    "desk": {
+      "type": "string",
+      "minLength": 1
+    },
+    "replacement_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "from_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "to_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "auto_replace",
+              "suggest_review",
+              "never_replace"
+            ]
+          },
+          "applies_to": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "exempt_quotes": {
+            "type": "boolean"
+          },
+          "requires_fact_check": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "rule_id",
+          "from_text",
+          "to_text",
+          "mode",
+          "applies_to",
+          "exempt_quotes",
+          "requires_fact_check"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "prohibited_content_categories": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "ruleset_id",
+    "revision",
+    "stream",
+    "desk",
+    "replacement_rules",
+    "prohibited_content_categories",
+    "updated_at"
+  ],
+  "additionalProperties": false
+}
