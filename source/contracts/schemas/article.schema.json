@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/article.schema.json",
+  "title": "article",
+  "description": "متن تحریریه تولیدشده؛ هنوز مجوز انتشار نیست.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "article_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "news_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stream": {
+      "type": "string",
+      "enum": [
+        "domestic",
+        "foreign",
+        "mixed",
+        "manual"
+      ]
+    },
+    "desk": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lead": {
+      "type": "string",
+      "minLength": 1
+    },
+    "body": {
+      "type": "string",
+      "minLength": 1
+    },
+    "short_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "framework_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "editorial_rules_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready_for_policy",
+        "held"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "article_id",
+    "news_id",
+    "stream",
+    "desk",
+    "title",
+    "lead",
+    "body",
+    "short_summary",
+    "source_refs",
+    "framework_version",
+    "editorial_rules_version",
+    "status",
+    "created_at"
+  ],
+  "additionalProperties": false
+}
