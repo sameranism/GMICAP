@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/output_controls.schema.json",
+  "title": "output_controls",
+  "description": "کنترل سه خروجی مستقل؛ روشن/خاموش کردن نباید رصد و آرشیو را متوقف کند.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "public_analysis": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ],
+      "additionalProperties": false
+    },
+    "studio": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "audio_enabled": {
+          "type": "boolean"
+        },
+        "video_enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled",
+        "audio_enabled",
+        "video_enabled"
+      ],
+      "additionalProperties": false
+    },
+    "publishing": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "domestic_enabled": {
+          "type": "boolean"
+        },
+        "foreign_enabled": {
+          "type": "boolean"
+        },
+        "public_reports_enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled",
+        "domestic_enabled",
+        "foreign_enabled",
+        "public_reports_enabled"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "revision",
+    "updated_at",
+    "updated_by",
+    "public_analysis",
+    "studio",
+    "publishing"
+  ],
+  "additionalProperties": false
+}

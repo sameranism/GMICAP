@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/public_report.schema.json",
+  "title": "public_report",
+  "description": "یکی از چهار گزارش عمومی؛ پس از اعتبارسنجی امکان انتشار دارد.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "report_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string",
+            "minLength": 1
+          },
+          "body": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "heading",
+          "body",
+          "source_refs"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "time_range": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "to": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "from",
+        "to"
+      ],
+      "additionalProperties": false
+    },
+    "generation_status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready_for_policy",
+        "completed"
+      ]
+    },
+    "created_by_project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "public"
+      ]
+    },
+    "report_type": {
+      "type": "string",
+      "enum": [
+        "domestic_digest",
+        "foreign_digest",
+        "news_angles",
+        "daily_summary"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "report_id",
+    "title",
+    "sections",
+    "source_refs",
+    "generated_at",
+    "time_range",
+    "generation_status",
+    "created_by_project",
+    "visibility",
+    "report_type"
+  ],
+  "additionalProperties": false
+}
