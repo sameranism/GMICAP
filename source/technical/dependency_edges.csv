@@ -1,0 +1,45 @@
+﻿from,to,contract,kind
+P04,P03,بسته منابع کشور,data_flow
+P03,P05,منابع داخلی,data_flow
+P03,P06,منابع خارجی,data_flow
+P05,P07,raw_news,data_flow
+P06,P07,raw_news,data_flow
+P07,P08,normalized_news,data_flow
+P07,P26,آرشیو,data_flow
+P08,P09,cluster_result,data_flow
+P26,P08,سابقه تکرار,data_flow
+P09,P12,foreign classified,data_flow
+P09,P13,domestic classified,data_flow
+P09,P15,موضوعات,data_flow
+P10,P12,واژه‌نامه,data_flow
+P10,P13,چارچوب,data_flow
+P12,P13,translation,data_flow
+P12,P26,نگهداری,data_flow
+P13,P14,article,data_flow
+P13,P11,article,data_flow
+P14,P11,image_manifest,data_flow
+P11,P22,auto_allowed,data_flow
+P11,P20,محتوای تأییدشده,data_flow
+P26,P15,منابع و آرشیو,data_flow
+P26,P17,داده محاسبه,data_flow
+P26,P27,جست‌وجو,data_flow
+P15,P16,analysis_result,data_flow
+P15,P18,analysis_result,data_flow
+P15,P19,analysis_result,data_flow
+P17,P18,metrics,data_flow
+P17,P19,metrics,data_flow
+P17,P27,metrics,data_flow
+P18,P11,public_report به کنترل,data_flow
+P19,P16,مجاز؛ خصوصی,data_flow
+P19,P27,مجاز؛ خصوصی,data_flow
+P20,P21,audio_manifest,data_flow
+P20,P24,audio_manifest,data_flow
+P21,P24,video_manifest,data_flow
+P22,P24,publication_job,data_flow
+P22,P25,publication_job,data_flow
+P23,P24,destination_config,data_flow
+P23,P25,destination_config,data_flow
+P14,P24,image_manifest,data_flow
+P24,P25,destination_payload,data_flow
+P25,P26,publication_result,data_flow
+P25,P17,publication_result,data_flow

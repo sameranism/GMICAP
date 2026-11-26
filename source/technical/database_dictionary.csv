@@ -1,0 +1,42 @@
+﻿package,table,owner_project,columns_draft,constraints_and_indexes,physical_location
+B01,control.config_revisions,P02,"config_id, version_no, scope, value_json, changed_by, effective_at","UNIQUE(config_id,version_no)؛ تغییرات immutable",هسته مرکزی
+B01,control.output_switches,P02,"switch_key, scope, enabled, revision, updated_by, updated_at","UNIQUE(switch_key,scope)؛ پیش از side effect خوانده شود",هسته مرکزی
+B01,control.editorial_rules,P02/P10,"rule_id, revision, desk, kind, rule_json, approved_by",نسخه‌بندی و ارجاع به قواعد، بدون تغییر متن منبع,هسته مرکزی
+B01,sources.source_registry,P03,"source_id, country, stream, url, mode, language, rights_scope, state","UNIQUE(stream,url_normalized)؛ API keys فقط credential_ref",هسته مرکزی
+B01,identity.users,P28,"user_id, username, role_id, password_hash, must_reset, is_active, created_at",سقف ۱۰ حساب انسانی فعال؛ گذرواژه هش‌شده؛ مجوز مدیریت کاربران,هسته مرکزی
+B01,identity.roles_permissions,P28,"role_id, permission_key, resource_scope, condition_json","کلید(role_id,permission_key,resource_scope)",هسته مرکزی
+B01,identity.auth_sessions,P28,"session_id, user_id, expires_at, revoked_at, client_fingerprint",جلسه کوتاه‌عمر + MFA نقش ممتاز؛ audit,هسته مرکزی
+B01,archive.news_records,P26,"news_id, stream, source_id, title, source_ref, published_at, received_at, classification","UNIQUE(news_id)؛ شاخص(stream,published_at)؛ متن منبع immutable",هسته مرکزی
+B01,archive.artifact_index,P26,"artifact_id, object_type, owner_project, object_uri, sha256, visibility, created_at",صرفاً URI امن؛ فایل بزرگ در Object Store,هسته مرکزی
+B01,orchestration.jobs,P29,"job_id, type, project_id, state, idempotency_key, attempts, deadline_at","UNIQUE(project_id,idempotency_key)؛ retry bounded",هسته مرکزی
+B01,orchestration.outbox,P29,"event_id, topic, aggregate_id, payload_ref, published_at, created_at",Transactional Outbox و نگهداری محدود,هسته مرکزی
+B01,security.audit_log,P28,"audit_id, actor_id, action, object_type, object_id, time, reason",append-only؛ پاک‌کردن توسط نقش عملیاتی ممنوع,هسته مرکزی
+B02,domestic.sources_snapshot,P05,"source_id, version, url, mode, poll_interval_s, enabled",نسخه local snapshot از P03,سرور داخلی
+B02,domestic.poll_state,P05,"source_id, etag, last_modified, last_success_at, next_poll_at",UNIQUE(source_id)؛ conditional HTTP GET,سرور داخلی
+B02,domestic.raw_items,P05,"raw_id, source_id, source_url, fetched_at, content_ref, source_hash, state","UNIQUE(source_id,source_hash)؛ متن مجاز در ذخیره‌ساز محلی",سرور داخلی
+B03,foreign.source_candidates,P04,"candidate_id, country_code, title, site_url, feed_url, verified, evidence_uri",بازبینی ادمین پیش از افزودن به P03,سرور خارجی
+B03,foreign.poll_state,P06,"source_id, etag, last_modified, last_success_at, next_poll_at",UNIQUE(source_id)؛ استقلال صف خارجی,سرور خارجی
+B03,foreign.raw_items,P06,"raw_id, source_id, country_code, source_url, fetched_at, content_ref, source_hash","UNIQUE(source_id,source_hash)؛ ارسال فقط از Bridge",سرور خارجی
+B04,processing.normalized_items,P07,"news_id, raw_ref, title, body_ref, lang, source_country, subject_countries, quality","source immutable, version of extraction recorded",هسته مرکزی
+B04,processing.clusters,P08,"cluster_id, canonical_id, similarity_version, updated_at",نگه‌داشت منابع متعارض به‌صورت مستقل,هسته مرکزی
+B04,processing.cluster_members,P08,"cluster_id, news_id, score, relation","UNIQUE(cluster_id,news_id)",هسته مرکزی
+B04,processing.news_desks,P09,"news_id, desk_id, priority_reason, version, selected","UNIQUE(news_id,desk_id)؛ سیاست داخلی/خارجی مستقل",هسته مرکزی
+B05,editorial.rulesets,P10,"ruleset_id, revision, locale, desk, terms_ref, policy_ref, approved_at",نقل‌قول‌ها هرگز auto_replace نشوند,هسته مرکزی
+B05,editorial.policy_decisions,P11,"decision_id, object_id, decision, reasons_json, policy_revision, decided_at","UNIQUE(object_id,policy_revision,content_hash)",هسته مرکزی
+B05,editorial.translations,P12,"translation_id, news_id, input_hash, lang_pair, model_ref, text_ref, qa_json",نگهداری متن اصلی و ارجاع ترجمه,هسته مرکزی
+B05,editorial.articles,P13,"article_id, news_id, desk_id, version, content_ref, summary_ref, state","UNIQUE(article_id,version)؛ revisionهای غیرقابل ویرایش",هسته مرکزی
+B05,editorial.image_assets,P14,"image_id, article_id, media_ref, rights_ref, rendition_json, approval",حفظ حقوق تصویر و منشأ AI,هسته مرکزی
+B06,insights.analyses,P15,"analysis_id, topic, period_start, period_end, evidence_ref, confidence_note",اسناد/نقل‌قول‌ها و فرضیه جدا,هسته مرکزی
+B06,insights.chat_sessions,P16,"chat_id, user_id, scope, started_at, state",RLS/RBAC قبل از retrieval,هسته مرکزی
+B06,insights.chat_messages,P16,"message_id, chat_id, actor, text_ref, evidence_ref, created_at",داده محرمانه بدون دسترسی در prompt نیست,هسته مرکزی
+B06,insights.metric_snapshots,P17,"snapshot_id, stream, desk, metric_date, value_json, data_cutoff","UNIQUE(stream,desk,metric_date,snapshot_type)",هسته مرکزی
+B06,insights.public_reports,P18,"report_id, report_slot, report_day, revision, content_ref, validation_state","UNIQUE(report_day,report_slot,revision)؛ slot 1..4",هسته مرکزی
+B06,executive.private_reports,P19,"report_id, report_slot, report_day, content_ref, owner_id, restricted_at",slot 5..7؛ DB role و bucket خصوصی؛ publishable=false,مخزن محرمانه مجزا
+B07,studio.audio_jobs,P20,"audio_id, article_id, text_hash, voice_ref, artifact_ref, review_state",اطلاعات صدای مجاز و متن خوانده‌شده,هسته مرکزی
+B07,studio.video_jobs,P21,"video_id, audio_id, avatar_ref, scene_ref, artifact_ref, synthetic_label",ثبت هویت مجری مصنوعی و watermark,هسته مرکزی
+B08,publish.destinations,P23,"destination_id, provider, channel_ref, stream, desk, credential_ref, verified","UNIQUE(provider,channel_ref)؛ credential امن و مجوز تست‌شده",هسته مرکزی
+B08,publish.jobs,P22,"job_id, article_id, report_id, stream, deadline_at, schedule_at, state, policy_decision_id",UNIQUE(publication_intent_key)؛ تاریخ انقضا,هسته مرکزی
+B08,publish.payloads,P24,"payload_id, job_id, destination_id, message_ref, image_ref, payload_hash","UNIQUE(job_id,destination_id)؛ rendition سازگار",هسته مرکزی
+B08,publish.attempts,P25,"attempt_id, job_id, destination_id, status, provider_msg_id, started_at, ended_at","UNIQUE(job_id,destination_id,attempt_no)؛ وضعیت unknown مهار شود",هسته مرکزی
+B09,ui.saved_views,P27,"view_id, user_id, dashboard_type, filters_json, created_at",dashboard_type owner/editor_in_chief/staff,هسته مرکزی
+B09,ui.notification_preferences,P27,"user_id, scope, channels_json, enabled",مالکیت preference نزد UI؛ حق دسترسی نزد P28,هسته مرکزی
