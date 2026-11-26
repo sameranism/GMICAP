@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "event_id": "evt-example-001",
+  "event_type": "news.normalized",
+  "object_id": "N-10001",
+  "correlation_id": "corr-example-1",
+  "idempotency_key": "P07:N-10001:v1",
+  "stream": "foreign",
+  "payload_ref": "s3://etemad-internal/archive/news/N-10001.json",
+  "classification": "internal",
+  "occurred_at": "2026-11-21T10:00:00Z"
+}
