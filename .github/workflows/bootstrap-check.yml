@@ -1,0 +1,22 @@
+name: Bootstrap structure check
+on:
+  pull_request:
+  push:
+    branches:
+      - 'bootstrap/**'
+permissions:
+  contents: read
+jobs:
+  verify-bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify tracked bootstrap files
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in AGENTS.md .gitignore docs/status/S00_READINESS.md docs/architecture/README.md; do
+            test -s "$file" || { echo "Missing required bootstrap file: $file"; exit 1; }
+          done
+          echo 'Bootstrap presence check passed; contract gate NOT evaluated.'

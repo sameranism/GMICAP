@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "news_id": "NEWS-10001",
+  "event_id": "EVENT-100",
+  "duplicate_of": null,
+  "related_news_ids": [],
+  "similarity_method": "url-and-text-v1",
+  "created_at": "2026-11-19T12:00:00Z"
+}

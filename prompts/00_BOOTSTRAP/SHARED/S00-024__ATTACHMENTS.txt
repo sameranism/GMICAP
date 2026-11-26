@@ -1,0 +1,4 @@
+source/specs/00_MASTER_ETEMAD_ARCHITECTURE.md
+source/technical/project_package_map.csv
+source/contracts/schemas/analysis_chat_response.schema.json
+source/contracts/examples/analysis_chat_response.example.json
