@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/workflow_status.schema.json",
+  "title": "workflow_status",
+  "description": "وضعیت فرایند در هماهنگ‌کننده P29.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "workflow_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "correlation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "current_project": {
+      "type": "string",
+      "pattern": "^P(0[1-9]|[12][0-9])$"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "new",
+        "running",
+        "held",
+        "completed",
+        "failed",
+        "cancelled"
+      ]
+    },
+    "attempt_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "last_error_code": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "workflow_id",
+    "correlation_id",
+    "current_project",
+    "state",
+    "attempt_count",
+    "last_error_code",
+    "updated_at"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.etemad.example/schemas/classified_news.schema.json",
+  "title": "classified_news",
+  "description": "گروه‌بندی سرویس‌ها؛ اولویت فقط برای کار خبری است نه امتیاز سیاسی.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ]
+    },
+    "news_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stream": {
+      "type": "string",
+      "enum": [
+        "domestic",
+        "foreign",
+        "mixed",
+        "manual"
+      ]
+    },
+    "desks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "subject_countries": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{2}$"
+      }
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operational_priority": {
+      "type": "string",
+      "enum": [
+        "urgent",
+        "normal",
+        "low"
+      ]
+    },
+    "rules_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "classified_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "schema_version",
+    "news_id",
+    "stream",
+    "desks",
+    "topics",
+    "subject_countries",
+    "event_id",
+    "operational_priority",
+    "rules_version",
+    "classified_at"
+  ],
+  "additionalProperties": false
+}
