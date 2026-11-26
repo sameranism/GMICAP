@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "ruleset_id": "RULE-INT",
+  "revision": 1,
+  "stream": "foreign",
+  "desk": "international",
+  "replacement_rules": [
+    {
+      "rule_id": "R-01",
+      "from_text": "عبارت نمونه",
+      "to_text": "معادل نمونه",
+      "mode": "suggest_review",
+      "applies_to": [
+        "body"
+      ],
+      "exempt_quotes": true,
+      "requires_fact_check": true
+    }
+  ],
+  "prohibited_content_categories": [
+    "identity_based_insult",
+    "unverified_claim"
+  ],
+  "updated_at": "2026-11-19T12:00:00Z"
+}

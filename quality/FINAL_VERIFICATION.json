@@ -1,0 +1,13 @@
+{
+  "all_tasks_have_prompts": true,
+  "all_tasks_have_attchments": true,
+  "all_referenced_files_present": true,
+  "unique_target_per_task": true,
+  "original_docs": true,
+  "cursor_readable_spec_docs": true,
+  "schemas": true,
+  "examples": true,
+  "gates": true,
+  "package_kickoffs": true,
+  "audit_batches": true
+}
